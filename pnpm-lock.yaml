@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  l2d-widget:
-    hash: jjynblsnhgox3jzwjkejgkadty
-    path: patches/l2d-widget.patch
-
 importers:
 
   .:
@@ -132,7 +127,7 @@ importers:
         version: 0.18.1
       l2d-widget:
         specifier: ^0.1.1
-        version: 0.1.1(patch_hash=jjynblsnhgox3jzwjkejgkadty)
+        version: 0.1.1
       mdast-util-to-string:
         specifier: ^4.0.0
         version: 4.0.0
@@ -10411,7 +10406,7 @@ snapshots:
 
   kolorist@1.8.0: {}
 
-  l2d-widget@0.1.1(patch_hash=jjynblsnhgox3jzwjkejgkadty): {}
+  l2d-widget@0.1.1: {}
 
   launder@1.7.1:
     dependencies:
