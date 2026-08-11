@@ -1,0 +1,20 @@
+{
+  "Version": 3,
+  "Meta": {
+    "Duration": 3.5,
+    "FadeInTime": 0.4,
+    "FadeOutTime": 0.4
+  },
+  "Curves": [
+    {
+      "Target": "Parameter",
+      "Id": "ParamAngleY",
+      "Segments": [0, 0, 1, 10, 2, -8, 3, 0]
+    },
+    {
+      "Target": "Parameter",
+      "Id": "ParamEyeBallX",
+      "Segments": [0, 0, 1, 0.5, 2, -0.4, 3, 0]
+    }
+  ]
+}
