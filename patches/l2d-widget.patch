@@ -1,0 +1,13 @@
+diff --git a/dist/index.js b/dist/index.js
+index 15e436caaf1cbbab1a9b5177115259c77349208d..033f2145f3227f44ac4ae843b0de15362ab01ae0 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -5178,7 +5178,7 @@ var D = class {
+ 		this.dragMgr.setPoint(0, 0);
+ 	}
+ 	mouseEvent(e) {
+-		e.preventDefault(), e.type == "click" || e.type == "contextmenu" ? this.modelTurnHead(e) : e.type == "mousemove" ? this.followPointer(e) : e.type == "mouseout" && this.lookFront();
++		e.preventDefault(), e.type == "click" || e.type == "contextmenu" ? this.modelTurnHead(e) : 0;
+ 	}
+ 	touchEvent(e) {
+ 		e.preventDefault();
