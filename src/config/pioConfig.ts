@@ -20,7 +20,7 @@ export const spineModelConfig: SpineModelConfig = {
 	// 位置配置
 	position: {
 		// 显示位置 bottom-left，bottom-right，top-left，top-right，注意：在右下角可能会挡住返回顶部按钮
-		corner: "bottom-right",
+		corner: "bottom-left",
 		// 距离边缘0px
 		offsetX: 0,
 		// 距离下边缘0px
@@ -84,8 +84,8 @@ export const spineModelConfig: SpineModelConfig = {
 
 // Live2D 看板娘配置 (使用 l2d-widget 库，文档：https://l2d-widget.hacxy.cn)
 export const live2dWidgetConfig: Live2DWidgetConfig = {
-	// Live2D 看板娘开关（启用：雪初音 + 黑猫可切换，位置左下角）
-	enable: true,
+	// Live2D 看板娘开关（关闭：与 Spine 流萤同在左下角，二选一启用）
+	enable: false,
 	// 模型配置，支持单个模型或数组（多模型切换）
 	model: [
 		{
