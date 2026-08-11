@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "如同流星飞跃天际",
 
 	// 站点 URL
-	site_url: "https://m66y.github.io",
+	site_url: "https://star.johnnylin.xyz",
 
 	// 站点描述
 	description:
