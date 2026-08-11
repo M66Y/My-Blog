@@ -3,7 +3,7 @@ import type { Live2DWidgetConfig, SpineModelConfig } from "../types/pioConfig";
 // Spine 看板娘配置
 export const spineModelConfig: SpineModelConfig = {
 	// Spine 看板娘开关
-	enable: false,
+	enable: true,
 
 	// Spine模型配置
 	model: {
@@ -84,10 +84,22 @@ export const spineModelConfig: SpineModelConfig = {
 
 // Live2D 看板娘配置 (使用 l2d-widget 库，文档：https://l2d-widget.hacxy.cn)
 export const live2dWidgetConfig: Live2DWidgetConfig = {
-	// Live2D 看板娘开关（关闭：与 Spine 流萤位置冲突，留底部给流萤）
+	// Live2D 看板娘开关（启用：warrior + 雪初音 + 黑猫可切换，位置右下角避开左下角流萤）
 	enable: true,
 	// 模型配置，支持单个模型或数组（多模型切换）
 	model: [
+		{
+			// 用户自建模型：warrior (lvemao, Cubism 3)
+			path: "/pio/models/live2d/warrior/lvemao.model3.json",
+			// 动作声音音量 范围0~1，默认 0（静音）
+			volume: 0,
+			// 模型缩放比例
+			scale: 1,
+			// X轴偏移，范围 -2~2，正值向右
+			x: 0,
+			// Y轴偏移，范围 -2~2，正值向上
+			y: 0,
+		},
 		{
 			// Live2D模型本地文件路径
 			path: "/pio/models/live2d/snow_miku/model.json",
@@ -110,7 +122,7 @@ export const live2dWidgetConfig: Live2DWidgetConfig = {
 		},
 	],
 	// 显示位置：bottom-left 或 bottom-right
-	position: "bottom-left" as const,
+	position: "bottom-right" as const,
 	// 画布尺寸（px）
 	size: { width: 200, height: 200 },
 	// 主题色，用于菜单、状态条等 UI 元素的背景色，默认 'rgba(96,165,250,0.9)'
