@@ -1,2 +1,5 @@
+packages:
+  - "."
+
 patchedDependencies:
   l2d-widget: patches/l2d-widget.patch
