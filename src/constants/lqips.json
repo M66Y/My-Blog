@@ -1,7 +1,6 @@
 {
   "src:assets/images/DesktopWallpaper/d6.avif": "d9e5ec9ca7aebda9b0",
   "src:assets/images/DesktopWallpaper/d5.avif": "e2dbe0e1dae1d9c9cd",
-  "src:assets/images/DesktopWallpaper/d4.avif": "727991b7a7bbe2b8c2",
   "src:assets/images/DesktopWallpaper/d3.avif": "4268936f829e99adc7",
   "src:assets/images/DesktopWallpaper/d2.avif": "b49db67a7e91d0aabc",
   "src:assets/images/DesktopWallpaper/d1.avif": "8b9bb59ba6bae7d7dd",
@@ -28,5 +27,8 @@
   "src:content/assets/interview-4.webp": "f3f2f2fdfdfdfdfdfd",
   "src:content/assets/interview-3.webp": "f6f6f6fdfdfdfcfcfc",
   "src:content/assets/interview-2.webp": "f4f4f3fdfdfdfdfcfd",
-  "src:content/assets/interview-1.webp": "ecececf4f4f3f8f7f8"
+  "src:content/assets/interview-1.webp": "ecececf4f4f3f8f7f8",
+  "src:content/assets/异星工厂本体01.png": "3e321f4a3f273b3322",
+  "src:assets/images/DesktopWallpaper/d9.avif": "ccd3e2b4c0d598a3b7",
+  "src:assets/images/DesktopWallpaper/d8.avif": "b4c9c29ab1aeb4c7cc"
 }
