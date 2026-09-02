@@ -47,3 +47,6 @@ package/
 .codex*
 .claude
 .mimocode
+
+# PDF 文档输出目录（不入库）
+output/
