@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="780" viewBox="0 0 1000 780" role="img" aria-labelledby="title desc">
+<title id="title">Agent Lightning 训练架构</title><desc id="desc">Trainer 创建训练任务，Controller 运行 harness，harness 通过 Gateway 调用推理服务，Gateway 收集事件，Trainer 获取样本并更新模型。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker></defs>
+<rect width="1000" height="780" rx="20" fill="#f8fafc"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#0f172a">
+<text x="40" y="48" font-size="28" font-weight="700">训练时保留 harness，采集实际交互</text>
+<text x="40" y="80" font-size="17" fill="#64748b">组件职责图 · 实际部署可以使用多个进程与执行节点</text>
+<rect x="54" y="118" width="390" height="110" rx="16" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="79" y="154" font-size="22" font-weight="700" fill="#1d4ed8">Rollout Controller</text><text x="79" y="187" font-size="19">启动和管理任务执行</text><text x="79" y="212" font-size="17" fill="#475569">本地进程 / Kubernetes Job</text>
+<rect x="556" y="118" width="390" height="110" rx="16" fill="#f5f3ff" stroke="#a78bfa" stroke-width="2"/>
+<text x="581" y="154" font-size="22" font-weight="700" fill="#6d28d9">Customized Trainer</text><text x="581" y="187" font-size="19">建任务、取样本、计算目标</text><text x="581" y="212" font-size="17" fill="#475569">计算优势、更新模型参数</text>
+<rect x="54" y="300" width="255" height="130" rx="16" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="77" y="336" font-size="22" font-weight="700" fill="#1d4ed8">Harness</text><text x="77" y="370" font-size="18">原有上下文与工具循环</text><text x="77" y="405" font-size="17" fill="#475569">配置模型入口与任务</text>
+<rect x="375" y="300" width="255" height="130" rx="16" fill="#f5f3ff" stroke="#a78bfa" stroke-width="2"/>
+<text x="398" y="336" font-size="22" font-weight="700" fill="#6d28d9">API Gateway</text><text x="398" y="370" font-size="18">兼容代理 / 关联 rollout</text><text x="398" y="405" font-size="17" fill="#475569">记录 token IDs 与概率</text>
+<rect x="695" y="300" width="251" height="130" rx="16" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+<text x="718" y="336" font-size="22" font-weight="700" fill="#047857">推理服务</text><text x="718" y="370" font-size="18">推理引擎 + 当前权重</text><text x="718" y="405" font-size="17" fill="#475569">示例：vLLM + Qwen</text>
+<rect x="54" y="512" width="255" height="110" rx="16" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/>
+<text x="77" y="550" font-size="22" font-weight="700" fill="#c2410c">工具 / 任务环境</text><text x="77" y="586" font-size="18">执行、观察、结果评价</text>
+<rect x="375" y="512" width="571" height="110" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="398" y="550" font-size="22" font-weight="700">Rollout 事件与训练样本</text><text x="398" y="586" font-size="18">请求 / 响应 / 奖励 → 样本适配 → 参数更新</text>
+<g stroke="#64748b" stroke-width="2.5" fill="none" marker-end="url(#arrow)"><path d="M181 228V297"/><path d="M309 363H372"/><path d="M630 363H692"/><path d="M181 430V509"/><path d="M820 228V297"/></g>
+<g stroke="#94a3b8" stroke-width="2.5" fill="none" stroke-dasharray="6 5" marker-end="url(#arrow)"><path d="M502 430V509"/><path d="M900 512H965V253H730V231"/><path d="M309 567H372"/></g>
+<g font-size="16" fill="#475569"><text x="195" y="267">启动任务</text><text x="323" y="346">请求</text><text x="644" y="346">转发</text><text x="832" y="267">更新权重</text><text x="515" y="480">采集事件</text><text x="762" y="470">读取样本</text></g>
+<rect x="54" y="665" width="892" height="73" rx="14" fill="#e2e8f0"/>
+<text x="79" y="695" font-size="19" font-weight="700">统计单位：一次尝试，而非拆分后的样本数量</text><text x="79" y="722" font-size="18">同一题目 → 3 个 rollout → 4 + 7 + 2 = 13 份样本，但只有 3 次尝试</text>
+</g></svg>

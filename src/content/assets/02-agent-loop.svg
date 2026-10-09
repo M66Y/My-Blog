@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="720" viewBox="0 0 1000 720" role="img" aria-labelledby="title desc">
+<title id="title">Agent 工具调用时序</title><desc id="desc">用户提交任务，harness 向模型发送上下文，模型返回工具调用，harness 执行工具并反馈结果，然后继续请求模型直至完成。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker></defs>
+<rect width="1000" height="720" rx="20" fill="#f8fafc"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#0f172a">
+<text x="40" y="48" font-size="28" font-weight="700">从请求到动作：一次工具调用循环</text>
+<text x="40" y="80" font-size="17" fill="#64748b">时间由上向下；模型提出动作，执行服务改变环境</text>
+<rect x="44" y="112" width="170" height="52" rx="12" fill="#e2e8f0"/>
+<rect x="291" y="112" width="170" height="52" rx="12" fill="#dbeafe"/>
+<rect x="539" y="112" width="170" height="52" rx="12" fill="#d1fae5"/>
+<rect x="787" y="112" width="170" height="52" rx="12" fill="#ffedd5"/>
+<g text-anchor="middle" font-size="21" font-weight="700"><text x="129" y="146">用户</text><text x="376" y="146" fill="#1d4ed8">Harness</text><text x="624" y="146" fill="#047857">模型服务</text><text x="872" y="146" fill="#c2410c">工具环境</text></g>
+<g stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5 6"><path d="M129 168V658"/><path d="M376 168V658"/><path d="M624 168V658"/><path d="M872 168V658"/></g>
+<rect x="267" y="272" width="661" height="291" rx="14" fill="#eff6ff" fill-opacity="0.75" stroke="#93c5fd" stroke-dasharray="7 5"/>
+<text x="284" y="299" font-size="17" font-weight="700" fill="#1d4ed8">循环：动作 → 观察 → 更新上下文</text>
+<g stroke="#64748b" stroke-width="2.5" fill="none" marker-end="url(#arrow)"><path d="M129 224H373"/><path d="M376 259H621"/><path d="M624 337H379"/><path d="M376 400H869"/><path d="M872 462H379"/><path d="M376 532H621"/><path d="M624 601H379"/><path d="M376 649H132"/></g>
+<g font-size="18" text-anchor="middle"><text x="252" y="211">① 提交任务</text><text x="500" y="246">② 上下文 + 工具定义</text><text x="500" y="324">③ 工具调用请求</text><text x="624" y="387">④ 执行命令 / 修改文件</text><text x="624" y="449">⑤ 返回输出 / 测试结果</text><text x="500" y="519">⑥ 追加结果，再次请求</text><text x="500" y="588">⑦ 最终回答 / 后续动作</text><text x="252" y="636">⑧ 返回任务结果</text></g>
+<text x="40" y="694" font-size="16" fill="#64748b">终止条件由整体系统判断，可结合模型输出、测试结果与运行限制。</text>
+</g></svg>

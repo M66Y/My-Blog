@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="720" viewBox="0 0 1000 720" role="img" aria-labelledby="title desc">
+<title id="title">Agent 架构与职责</title><desc id="desc">Agent 包含 harness、工具环境与模型服务。模型调用可经过代理，工具在执行服务中运行，结果反馈给 harness。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker></defs>
+<rect width="1000" height="720" rx="20" fill="#f8fafc"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#0f172a">
+<text x="40" y="48" font-size="28" font-weight="700">Agent：整体系统与调用关系</text>
+<text x="40" y="80" font-size="17" fill="#64748b">接口、服务与控制程序承担不同职责</text>
+<rect x="36" y="166" width="928" height="510" rx="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="420" y="199" font-size="19" font-weight="700" fill="#475569">AGENT · 模型 + harness + 工具环境</text>
+<rect x="80" y="100" width="310" height="46" rx="12" fill="#e2e8f0"/>
+<text x="235" y="130" text-anchor="middle" font-size="19">用户任务</text>
+<rect x="80" y="230" width="310" height="154" rx="16" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="105" y="265" font-size="23" font-weight="700" fill="#1d4ed8">Harness · 控制程序</text>
+<text x="105" y="302" font-size="19">构造上下文、解析调用</text>
+<text x="105" y="334" font-size="19">执行动作、保存结果</text>
+<text x="105" y="365" font-size="17" fill="#475569">控制循环、重试与终止条件</text>
+<rect x="570" y="230" width="350" height="154" rx="16" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/>
+<text x="596" y="265" font-size="23" font-weight="700" fill="#c2410c">工具 / 执行环境</text>
+<text x="596" y="302" font-size="19">终端、文件、浏览器、数据库</text>
+<text x="596" y="334" font-size="19">实际运行命令或修改状态</text>
+<text x="596" y="365" font-size="17" fill="#475569">执行结果反馈给 harness</text>
+<rect x="80" y="452" width="310" height="94" rx="16" fill="#f5f3ff" stroke="#a78bfa" stroke-width="2"/>
+<text x="105" y="487" font-size="22" font-weight="700" fill="#6d28d9">LLM proxy · 可选</text>
+<text x="105" y="522" font-size="18">兼容接口、转发、记录</text>
+<rect x="570" y="452" width="350" height="176" rx="16" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+<text x="596" y="487" font-size="22" font-weight="700" fill="#047857">模型服务</text>
+<rect x="591" y="508" width="308" height="42" rx="8" fill="#d1fae5"/>
+<text x="745" y="535" text-anchor="middle" font-size="18">API · 请求与响应契约</text>
+<text x="596" y="584" font-size="20">推理引擎 + 模型权重</text>
+<text x="596" y="611" font-size="17" fill="#475569">生成回答或工具调用请求</text>
+<g stroke="#64748b" stroke-width="2.5" fill="none" marker-end="url(#arrow)">
+<path d="M235 146V227"/><path d="M390 281H567"/><path d="M570 340H393"/><path d="M235 384V449"/><path d="M390 499H567"/>
+</g>
+<text x="480" y="269" text-anchor="middle" font-size="17">执行工具</text>
+<text x="480" y="363" text-anchor="middle" font-size="17">返回结果</text>
+<text x="250" y="424" font-size="17">模型请求</text>
+<text x="480" y="481" text-anchor="middle" font-size="17">转发请求</text>
+<path d="M570 599H235V546" stroke="#94a3b8" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="404" y="622" text-anchor="middle" font-size="17" fill="#64748b">响应经代理返回 harness</text>
+</g></svg>
